@@ -1,0 +1,8 @@
+{
+  "name": "focus",
+  "app_id": "acf619d3",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
