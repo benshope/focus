@@ -1,3 +1,31 @@
+[![CircleCI](https://circleci.com/gh/benshope/focus.svg?style=shield)](https://circleci.com/gh/benshope/focus)
+
+# Focus
+A simple brain trainer app with touch gestures.  Benefit from a mental workout designed to measurably improve working memory, fluid intelligence, and focus.
+Old version: https://chrome.google.com/webstore/detail/up-brain-trainer/mblkelhakpkffejkdboofnkljkgndlno
+
+## About N-Back Exercises
+N-back exercises are a well-researched form of mental exercise designed to increase fluid intelligence.  Fluid intelligence refers to the ability to reason and to solve new problems. This is critical for a wide variety of cognitive tasks and is considered one of the most important factors in learning. Additionally, fluid intelligence is closely related to professional and educational success.
+
+## To Do ##
+
+- Load fonts locally
+- Generate icons
+- Import slideshow component or HammerJS?
+- Write a Unit Test? (to test if the CI stops it)
+- Investigate CI deploy to mobile
+- Add relevant Cordova plugins
+
+## Old Deploy Steps ##
+
+**Generate a key (first time only):** keytool -genkey -v -keystore android-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+
+**Sign the APK:** jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore android-release-key.keystore platforms/android/build/outputs/apk/android-release-unsigned.apk alias_name
+
+**Zip the APK:** ~/Library/Android/sdk/build-tools/23.0.3/zipalign -v 4 platforms/android/build/outputs/apk/android-release-unsigned.apk platforms/android/build/outputs/apk/layers.apk
+
+
+
 # The Ionic Super Starter 🎮
 
 <img src="https://user-images.githubusercontent.com/236501/32385619-bddac0ac-c08c-11e7-9ee4-9c892197191f.png" width="400" />
@@ -76,13 +104,13 @@ requests to an API endpoint that you will need to configure.
 ### Api
 
 The `Api` provider is a simple CRUD frontend to an API. Simply put the root of
-your API url in the Api class and call get/post/put/patch/delete 
+your API url in the Api class and call get/post/put/patch/delete
 
 ## i18n
 
 Ionic Super Starter comes with internationalization (i18n) out of the box with
 [ngx-translate](https://github.com/ngx-translate/core). This makes it easy to
-change the text used in the app by modifying only one file. 
+change the text used in the app by modifying only one file.
 
 ### Adding Languages
 
