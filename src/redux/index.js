@@ -1,12 +1,13 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { createEpicMiddleware, combineEpics } from 'redux-observable';
 import gameReducer from './game/game.reducer';
+import gameEpics from './game/game.epics';
 
 const reducer = combineReducers({
-  gameReducer,
+  game: gameReducer,
 });
 
-const epics = combineEpics(...[]); // TODO: no epics yet
+const epics = combineEpics(...gameEpics);
 
 const middleware = applyMiddleware(createEpicMiddleware(epics));
 

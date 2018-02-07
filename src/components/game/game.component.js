@@ -1,19 +1,24 @@
 import React, { PropTypes } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-const Game = ({
-  // gamesState: { games },
-}) => {
-  return (
-    <View style={styles.container}>
-      <Text>the app is working and has redux observable</Text>
-    </View>
-  );
-};
+class Game extends React.Component {
+  componentDidMount() {
+    this.props.gameStarted();
+  }
 
-Game.propTypes = {
-  // increment: PropTypes.func.isRequired,
-};
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>Game: {this.props.game && this.props.game.game}</Text>
+      </View>
+    );
+  }
+}
+
+// Game.propTypes = {
+//   game: PropTypes.array,
+//   gameStarted: PropTypes.func,
+// };
 
 const styles = StyleSheet.create({
   container: {
