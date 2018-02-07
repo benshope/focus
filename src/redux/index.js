@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { createEpicMiddleware, combineEpics } from 'redux-observable';
-import counters from './modules/counters';
+import gameReducer from './game/game.reducer';
 
 const reducer = combineReducers({
-  counters,
+  gameReducer,
 });
 
 const epics = combineEpics(...[]); // TODO: no epics yet
