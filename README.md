@@ -8,15 +8,14 @@ Old version: https://chrome.google.com/webstore/detail/up-brain-trainer/mblkelha
 N-back exercises are a well-researched form of mental exercise designed to increase fluid intelligence.  Fluid intelligence refers to the ability to reason and to solve new problems. This is critical for a wide variety of cognitive tasks and is considered one of the most important factors in learning. Additionally, fluid intelligence is closely related to professional and educational success.
 
 ## To Do ##
-- Make react-native-web work on this also
-- Add splashscreens and icons back
-- Add back nice font
-- Update CI token to point to the GitHub version
-- Build once for mobile
-- Write a unit test
-- Attach unit tests to CI
+- Make this dual build to `react-native-web`
+- Add splashscreens
+- Add icons
+- Do a mobile build
 - Set up CI deploy to web
+- Integrate CI deploy with unit tests
 - Investigate CI deploy to mobile
+- Investigate adding apple watch app
 
 ## Old Deploy Steps ##
 
