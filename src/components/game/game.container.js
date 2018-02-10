@@ -1,5 +1,5 @@
 import { bindActionCreators } from 'redux';
-import { connect, dispatch } from 'react-redux';
+import { connect } from 'react-redux';
 
 import { gameStarted } from '../../redux/game/game.actions';
 import Game from './game.component';
