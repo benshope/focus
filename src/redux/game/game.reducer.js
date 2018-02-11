@@ -1,7 +1,5 @@
 import {
     GAME_STARTED,
-    GAME_SUCCEEDED,
-    GAME_FAILED,
     GAME_ADD_FRAME,
 } from './game.actions';
 
@@ -19,16 +17,6 @@ const gameReducers = {
         ...state,
         error: undefined,
         loading: true,
-    }),
-    [GAME_SUCCEEDED]: (state, action) => ({
-        ...state,
-        timestamp: action.payload.timestamp,
-        loading: false,
-    }),
-    [GAME_FAILED]: (state, action) => ({
-        ...state,
-        error: action.payload,
-        loading: false,
     }),
 };
 

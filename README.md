@@ -13,7 +13,7 @@ A simple [n-back](https://en.wikipedia.org/wiki/N-back) brain training app with 
 - Investigate CI deploy to mobile
 - Investigate adding apple watch app
 
-## React Native ReadMe 
+## React Native ReadMe
 https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md
 
 ## Previous Version
