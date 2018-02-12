@@ -24,4 +24,5 @@ jobs:
       # run tests
       # - run: yarn test
       # deploy to firebase
+      - run: yarn build-web
       - run: ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN
