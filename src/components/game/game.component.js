@@ -4,7 +4,8 @@ import {
   // Button,
   StyleSheet,
   View,
-  ProgressBar,
+  // ProgressBar,
+  // Dimensions,
   Text,
   TouchableHighlight,
 } from 'react-native';
@@ -18,15 +19,34 @@ const styles = StyleSheet.create({
   progressBar: {
     height: 20
   },
+  gridSquaresWrapper: {
+    display: 'flex',
+    flex: 2,
+    flexWrap: 'wrap',
+    flexDirection: 'row'
+  },
+  gridSquare: {
+    minWidth: '30%',
+    margin: '1rem',
+    borderRadius: '1rem',
+    flexGrow: 1
+  },
   yesNoRow: {
     flexDirection: 'row',
-    // alignItems: 'center',
-    justifyContent: 'space-between',
     flex: 1,
+    display: 'flex',
   },
   yesNoButton: {
-    flexBasis: '33%',
+    minWidth: '40%',
+    margin: '1rem',
+    borderRadius: '1rem',
+    justifyContent: 'center',
     flexGrow: 1,
+    alignItems: 'center',
+  },
+  yesNoButtonText: {
+    fontSize: '10vw',
+    color: 'white'
   }
 });
 
@@ -35,64 +55,43 @@ class Game extends React.Component {
     this.props.gameStarted();
   }
 
-
   render() {
     const emptyFunction = () => undefined;
-    const items = [true, false, false, true, true, false, false, true, true];
+    const frame = this.props.game.frames[0] || [...Array(9)];
     return (
       <View style={styles.container}>
-        <ProgressBar
-          color="#1DA1F2"
-          progress={0.33}
-          style={styles.progressBar}
-          trackColor="#D1E3F6"
-        />
-        <Text>Game: {this.props.game && this.props.game.game}</Text>
-        <View style={{
-          display: 'flex',
-          flex: 2,
-          flexWrap: 'wrap',
-          flexDirection: 'row' }}
-        >
-          {items.map((item, i) => (<View
+        <View style={styles.gridSquaresWrapper}>
+          {frame && frame.map((item, i) => (<View
             key={i}
-            style={{
-              flex: 0.2,
-              // flexBasis: '30%',
-              minWidth: '33%',
-              flexGrow: 1,
-              border: '1px solid red',
-              backgroundColor: item ? 'blue' : 'yellow'
-            }} />))}
+            style={[
+              styles.gridSquare,
+              {backgroundColor: item ? '#c0c0c0' : '#f2f2f2'}
+            ]}
+          />))}
         </View>
         <View style={styles.yesNoRow}>
-            <TouchableHighlight
-              onPress={emptyFunction}
-              underlayColor='#1B95E0'
-            >
-              <Text>✔</Text>
-            </TouchableHighlight>
-            <TouchableHighlight
-              onPress={emptyFunction}
-              underlayColor='#1B95E0'
-            >
-              <Text>✘</Text>
-            </TouchableHighlight>
-            {/* <Button
-              color="green"
-              onPress={emptyFunction}
-              title="✔"
-              style={styles.yesNoButton}
-            />
-            <Button
-              color="red"
-              onPress={emptyFunction}
-              title="✘"
-              style={styles.yesNoButton}
-            /> */}
+          <TouchableHighlight
+            onPress={emptyFunction}
+            underlayColor='darkgreen'
+            style={[
+              styles.yesNoButton,
+              {backgroundColor: 'green'}
+            ]}
+          >
+            <Text style={styles.yesNoButtonText}>✔</Text>
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={emptyFunction}
+            underlayColor='darkred'
+            style={[
+              styles.yesNoButton,
+              {backgroundColor: 'red'}
+            ]}
+          >
+            <Text style={styles.yesNoButtonText}>✘</Text>
+          </TouchableHighlight>
         </View>
-      </View>
-    );
+    </View>);
   }
 }
 
