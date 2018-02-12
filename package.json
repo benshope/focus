@@ -20,6 +20,7 @@
     "start": "react-scripts start",
     "build-web": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    // "test-no-watch": "CI=true react-scripts test --env=jsdom",
     "eject-web": "react-scripts eject",
     "start-native": "react-native-scripts start",
     "eject-native": "react-native-scripts eject",
