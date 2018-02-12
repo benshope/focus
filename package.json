@@ -34,6 +34,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx-source": "^6.22.0",
     "babel-preset-expo": "^4.0.0",
+    "firebase-tools": "^3.17.4",
     "flow-bin": "^0.65.0",
     "jest-expo": "^25.1.0",
     "react-native-scripts": "^1.11.1",
