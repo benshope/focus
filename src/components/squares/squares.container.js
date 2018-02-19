@@ -1,14 +1,16 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { gameStarted } from '../../redux/game/game.actions';
-import Game from './game.component';
+import Squares from './squares.component';
+
+const mapStateToProps = ({ game: { frames } }) => ({
+  frames
+});
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  gameStarted,
 }, dispatch);
 
 export default connect(
-  undefined,
+  mapStateToProps,
   mapDispatchToProps
-)(Game);
+)(Squares);
